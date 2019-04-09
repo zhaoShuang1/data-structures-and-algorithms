@@ -12,7 +12,7 @@ import java.util.Arrays;
  * 
  * 
  */
-public class SelectSort {
+public class SelectSortTest {
 	public static void main(String[] args) {
 		int[] arr = new int[] {21,34,5,7,1,4,8,12,3};
 		System.out.println(Arrays.toString(arr));
