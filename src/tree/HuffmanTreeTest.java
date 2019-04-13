@@ -48,7 +48,7 @@ public class HuffmanTreeTest {
 		}
 		@Override
 		public int compareTo(Node o) {
-			return o.value-this.value;
+			return (int)(o.value-this.value);
 		}
 		
 	}
