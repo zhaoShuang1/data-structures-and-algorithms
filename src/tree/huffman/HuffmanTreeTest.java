@@ -1,4 +1,4 @@
-package tree;
+package tree.huffman;
 
 import java.util.ArrayList;
 import java.util.Collections;
