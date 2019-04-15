@@ -1,5 +1,12 @@
 package tree.huffman;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -8,17 +15,85 @@ import java.util.List;
 import java.util.Map;
 
 public class HuffmanCodeTest {
-	public static void main(String[] args) {
-		String str = "can you can a can as a canner can a can";
-		byte[] bytes = str.getBytes();
-		byte[] zipBytes = zip(bytes);
-		System.out.println(Arrays.toString(bytes));
-		System.out.println(Arrays.toString(zipBytes));
-		byte[] oldBytes = unzip(huffmanCode,zipBytes);
-		System.out.println(Arrays.toString(oldBytes));
+	public static void main(String[] args) throws Exception {
+//		String str = "can you can a can as a canner can a can";
+//		byte[] bytes = str.getBytes();
+//		byte[] zipBytes = encode(bytes);
+//		System.out.println(Arrays.toString(bytes));
+//		System.out.println(Arrays.toString(zipBytes));
+//		byte[] oldBytes = decode(huffmanCode,zipBytes);
+//		System.out.println(Arrays.toString(oldBytes));
+		
+		zip("1.png", "2.zip");
+		
+		unzip( "2.zip","3.png");
+		
+		
+		
+		
+		
+	}
+	
+	
+	private static void unzip(String src, String dest) {
+		try(
+				OutputStream output = new FileOutputStream(dest);
+				ObjectInputStream ois = new ObjectInputStream(new FileInputStream(src))){
+			Map<Byte,String> huffmanCode = (Map<Byte, String>) ois.readObject();
+			byte[] bytes = (byte[]) ois.readObject();
+			byte[] newBytes = decode(huffmanCode, bytes);
+			output.write(newBytes);
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
 	}
 
-	public static byte[] unzip(Map<Byte, String> huffmanCode2, byte[] bytes) {
+
+	public static void zip(String src,String dest) throws Exception {
+		try(
+			InputStream input = new FileInputStream(src);
+				ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(dest))){
+			
+			byte[] bytes = new byte[input.available()];
+			
+			input.read(bytes);
+			
+			byte[] newBytes = encode(bytes);
+			//写入Huffmancode
+			oos.writeObject(huffmanCode);
+			//写入重编码的数据
+			oos.writeObject(newBytes);
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	//使用Huffmancode 解码
+	public static byte[] decode(Map<Byte, String> huffmanCode2, byte[] bytes) {
 		List<Byte> newBytes = new ArrayList<>();
 		
 		Map<String,Byte> map = new HashMap<String,Byte>();
@@ -73,8 +148,8 @@ public class HuffmanCodeTest {
 	
 	
 	
-
-	public static byte[] zip(byte[] bytes) {
+	//使用Huffmancode重新编码
+	public static byte[] encode(byte[] bytes) {
 		//字节数组转成节点
 		List<Node> nodes = getNodes(bytes);
 		//创建Huffmantree
