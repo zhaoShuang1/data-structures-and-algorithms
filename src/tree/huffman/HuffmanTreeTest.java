@@ -1,4 +1,4 @@
-package tree;
+package tree.huffman;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -48,7 +48,7 @@ public class HuffmanTreeTest {
 		}
 		@Override
 		public int compareTo(Node o) {
-			return o.value-this.value;
+			return (int)(o.value-this.value);
 		}
 		
 	}
