@@ -12,19 +12,25 @@ public class BinarySortTreeTest {
 		}
 		//中序遍历
 		binarySortTree.midShow();
-		//节点查找
-		Node node = binarySortTree.search(12);
-		System.out.println(node);
-		// 父节点查找
-		Node node2 = binarySortTree.searchParent(11);
-		System.out.println(node2);
-		System.out.println("=======");
-		//节点删除
-		binarySortTree.delete(8);
+//		//节点查找
+//		Node node = binarySortTree.search(12);
+//		System.out.println(node);
+//		// 父节点查找
+//		Node node2 = binarySortTree.searchParent(11);
+//		System.out.println(node2);
+//		System.out.println("=======");
+//		//节点删除
+//		binarySortTree.delete(8);
+//		binarySortTree.midShow();
+//		System.out.println("========");
+//		binarySortTree.delete(10);
+//		binarySortTree.midShow();
+		
+		System.out.println("-----");
+		binarySortTree.delete(3);
 		binarySortTree.midShow();
-		System.out.println("========");
-		binarySortTree.delete(10);
-		binarySortTree.midShow();
+		
+		
 		
 	}
 

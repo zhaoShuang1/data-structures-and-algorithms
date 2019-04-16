@@ -70,6 +70,11 @@ public class Node {
 		}
 		return null;
 	}
+	
+	
+	
+	
+	
 
 	public int getValue() {
 		return value;
@@ -94,7 +99,6 @@ public class Node {
 	public void setLeft(Node left) {
 		this.left = left;
 	}
-	
 	
 
 }
