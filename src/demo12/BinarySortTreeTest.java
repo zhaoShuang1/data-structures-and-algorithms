@@ -7,7 +7,8 @@ public class BinarySortTreeTest {
 		BinarySortTree binarySortTree = new BinarySortTree();
 		//int[] arr = new int[] {7,3,10,12,5,1,8};
 		//int[] arr = new int[] {1,2,3,4,5,6,7,8};
-		int[] arr = new int[] {7,5,8,6,4,3};
+//		int[] arr = new int[] {7,5,8,6,4,3};
+		int[] arr = new int[] {7,8,4,3,5,6};
 		//添加节点
 		for (int i : arr) {
 			binarySortTree.add(new Node(i));
@@ -35,10 +36,13 @@ public class BinarySortTreeTest {
 		//树的高度
 		System.out.println(binarySortTree.height());
 		
+		
 		System.out.println(binarySortTree.root.rightHeight());
 		System.out.println(binarySortTree.root.leftHeight());
 		
 		System.out.println(binarySortTree.root);
+		System.out.println(binarySortTree.root.getLeft());
+		System.out.println(binarySortTree.root.getRight());
 	}
 
 }

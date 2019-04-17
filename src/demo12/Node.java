@@ -48,10 +48,18 @@ public class Node {
 		}
 		
 		if(leftHeight() - rightHeight() >= 2) { // 左左，右旋
-			rightRotation();
+			 if(left.leftHeight() < left.rightHeight()) {  //双旋转
+				 left.leftRotation();
+				 rightRotation();
+			 }else {
+				 rightRotation();
+			 }
 		}
 		
 		if(leftHeight() - rightHeight() <= -2) { // 右右，左旋
+			if(right.rightHeight() < right.leftHeight()) {
+				right.rightHeight();
+			}
 			leftRotation();
 		}
 		
