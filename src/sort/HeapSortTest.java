@@ -26,6 +26,7 @@ public class HeapSortTest {
 		}
 	}
 	
+	//大顶堆
 	public static void maxHeap(int[] arr,int size,int index) {
 		//左子节点
 		int leftNode = 2*index+1;
@@ -48,6 +49,33 @@ public class HeapSortTest {
 			arr[index] = temp;
 			//交换之可能会破坏大顶堆，递归处理
 			maxHeap(arr, size, max);
+		}
+	}
+	
+	
+	//小顶堆
+	public static void minHeap(int[] arr,int size,int index) {
+		//左子节点
+		int leftNode = 2*index+1;
+		//右子节点
+		int rightNode = 2*index+2;
+		
+		//找出最大值
+		int min = index;
+		if(leftNode < size && arr[leftNode] < arr[min]) {
+			min = leftNode;
+		}
+		if(rightNode < size && arr[rightNode] < arr[min]) {
+			min = rightNode;
+		}
+		
+		//交换位置
+		if(min != index) {
+			int temp = arr[min];
+			arr[min] = arr[index];
+			arr[index] = temp;
+			//交换之可能会破坏大顶堆，递归处理
+			minHeap(arr, size, min);
 		}
 	}
 }
