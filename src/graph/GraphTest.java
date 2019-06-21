@@ -1,4 +1,4 @@
-package demo13;
+package graph;
 
 public class GraphTest {
 	public static void main(String[] args) {

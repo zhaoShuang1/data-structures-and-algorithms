@@ -1,4 +1,4 @@
-package demo5;
+package binarytree;
 
 public class BinaryTree {
 	TreeNode root;

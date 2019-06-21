@@ -1,4 +1,4 @@
-package demo12;
+package binarysorttree;
 
 public class BinarySortTree {
 	Node root;
@@ -89,12 +89,4 @@ public class BinarySortTree {
 		return target.getValue(); 
 	}
 	
-	
-	
-	public int height() {
-		if(root==null) {
-			return 0;
-		}
-		return root.height();
-	}
 }

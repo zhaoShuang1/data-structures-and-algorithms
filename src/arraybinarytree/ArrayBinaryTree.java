@@ -1,4 +1,4 @@
-package demo6;
+package arraybinarytree;
 /**
  * 顺序二叉树
  *

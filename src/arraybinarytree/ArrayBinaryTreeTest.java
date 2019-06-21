@@ -1,4 +1,4 @@
-package demo6;
+package arraybinarytree;
 //顺序二叉树
 public class ArrayBinaryTreeTest {
 	public static void main(String[] args) {

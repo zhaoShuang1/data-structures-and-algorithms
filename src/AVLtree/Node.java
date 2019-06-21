@@ -1,4 +1,4 @@
-package demo12;
+package AVLtree;
 
 public class Node {
 	private int value;

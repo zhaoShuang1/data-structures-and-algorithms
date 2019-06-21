@@ -143,6 +143,21 @@ public class LeetCodeTest {
 	}
 	
 	
+	/**
+	 * 235. 二叉搜索树的最近公共祖先
+	 */
+	public static TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+		
+		
+		return null;
+	}
+	
+	
+	
+	
+	
+	
+	
 	public static void main(String[] args) {
 //		int[] nums = new int[] {2,7,11,15};
 //		int[] test1 = twoSum(nums, 13);

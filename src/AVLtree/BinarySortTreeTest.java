@@ -1,4 +1,4 @@
-package demo12;
+package AVLtree;
 /**
    * 二叉排序树
  */
