@@ -205,11 +205,14 @@ public class LeetCodeTest {
 		// t20.right = t7;
 		// levelOrderBottom(t3).forEach(System.out::println);
 		
-		int[] pre = new int[] {3,9,20,15,7};
-		int[] in = new int[] {9,3,15,20,7};
-		
-		TreeNode tree = reConstructBinaryTree(pre, in);
-		System.out.println(tree);
-		show(tree);
+//		int[] pre = new int[] {3,9,20,15,7};
+//		int[] in = new int[] {9,3,15,20,7};
+//		
+//		TreeNode tree = reConstructBinaryTree(pre, in);
+//		System.out.println(tree);
+//		show(tree);
+	
+		String str = "abc_def";
+		System.out.println(str.substring(str.indexOf("-")+1,str.length()));
 	}
 }
